@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terapia Ocupacional Infantil — Casa Oliveira Saúde</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracota: #C4714A;
+    --terracota-light: #D4896A;
+    --terracota-pale: #F7EDE6;
+    --verde: #5C6B4A;
+    --verde-light: #7A8C65;
+    --verde-pale: #EFF4EA;
+    --creme: #F5EFE6;
+    --marrom: #2C1F14;
+    --marrom-meio: #6B4F3A;
+    --marrom-claro: #9C7B66;
+    --bg: #FAF7F2;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--marrom); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+  /* HERO */
+  .hero { background: var(--marrom); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px 60px; position: relative; overflow: hidden; }
+  .hero-orb1 { position: absolute; top: -100px; right: -80px; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, var(--terracota) 0%, transparent 70%); opacity: 0.18; }
+  .hero-orb2 { position: absolute; bottom: -120px; left: -60px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, var(--verde) 0%, transparent 70%); opacity: 0.2; }
+  .hero-tag { display: inline-block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--terracota-light); border: 1px solid rgba(196,113,74,0.3); padding: 6px 14px; border-radius: 20px; margin-bottom: 28px; width: fit-content; opacity: 0; animation: fadeUp 0.8s ease 0.1s forwards; }
+  .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 7vw, 68px); font-weight: 300; color: var(--creme); line-height: 1.05; max-width: 680px; opacity: 0; animation: fadeUp 0.8s ease 0.25s forwards; }
+  .hero-headline em { font-style: italic; color: var(--terracota-light); }
+  .hero-sub { margin-top: 24px; font-size: 15px; color: rgba(245,239,230,0.55); max-width: 500px; line-height: 1.8; opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards; }
+  .hero-cta-row { margin-top: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease 0.55s forwards; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--terracota); color: white; padding: 16px 28px; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 1px; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
+  .btn-primary:hover { background: var(--terracota-light); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(196,113,74,0.35); }
+  .btn-primary svg { width: 18px; height: 18px; fill: white; }
+  .hero-pills { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 10px; opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards; }
+  .pill { background: rgba(245,239,230,0.06); border: 1px solid rgba(245,239,230,0.12); color: rgba(245,239,230,0.6); font-size: 11px; padding: 6px 14px; border-radius: 20px; letter-spacing: 0.5px; }
+
+  /* SEÇÕES */
+  .section { padding: 72px 48px; }
+  .section-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--terracota); margin-bottom: 12px; font-weight: 500; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 300; line-height: 1.2; max-width: 600px; margin-bottom: 40px; }
+  .section-title em { font-style: italic; color: var(--terracota); }
+
+  /* DORES */
+  .section-dores { background: var(--creme); }
+  .dores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .dor-card { background: white; border-radius: 16px; padding: 24px; border-left: 3px solid var(--terracota); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .dor-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(44,31,20,0.08); }
+  .dor-icon { font-size: 28px; margin-bottom: 12px; }
+  .dor-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; margin-bottom: 8px; }
+  .dor-card p { font-size: 13px; color: var(--marrom-meio); line-height: 1.7; }
+
+  /* ABORDAGEM */
+  .section-abordagem { background: var(--bg); }
+  .abordagem-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .abordagem-texto p { font-size: 15px; color: var(--marrom-meio); line-height: 1.9; margin-bottom: 16px; }
+  .abordagem-texto p strong { color: var(--marrom); font-weight: 500; }
+  .abordagem-lista { display: flex; flex-direction: column; gap: 14px; }
+  .ab-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px; background: white; border-radius: 12px; border: 1px solid rgba(44,31,20,0.06); transition: border-color 0.2s; }
+  .ab-item:hover { border-color: var(--terracota); }
+  .ab-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--terracota); flex-shrink: 0; margin-top: 6px; }
+  .ab-item p { font-size: 13px; color: var(--marrom-meio); line-height: 1.6; }
+  .ab-item p strong { color: var(--marrom); font-weight: 500; display: block; margin-bottom: 2px; }
+
+  /* EQUIPE */
+  .section-equipe { background: var(--marrom); position: relative; overflow: hidden; }
+  .section-equipe::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, var(--verde) 0%, transparent 70%); opacity: 0.12; }
+  .section-equipe .section-label { color: var(--terracota-light); }
+  .section-equipe .section-title { color: var(--creme); }
+  .section-equipe .section-title em { color: var(--terracota-light); }
+  .equipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+
+  /* CARD TERAPEUTA com foto */
+  .terapeuta-card { background: rgba(245,239,230,0.05); border: 1px solid rgba(245,239,230,0.1); border-radius: 20px; overflow: hidden; transition: all 0.3s ease; }
+  .terapeuta-card:hover { background: rgba(245,239,230,0.09); border-color: rgba(196,113,74,0.4); transform: translateY(-4px); }
+  .terapeuta-foto { width: 100%; height: 280px; object-fit: cover; object-position: center top; display: block; }
+  .terapeuta-body { padding: 24px; }
+  .terapeuta-fundadora { display: inline-block; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; background: var(--terracota); color: white; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; font-weight: 500; }
+  .terapeuta-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--creme); margin-bottom: 4px; }
+  .terapeuta-card .cargo { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracota-light); margin-bottom: 14px; font-weight: 500; }
+  .terapeuta-card p { font-size: 13px; color: rgba(245,239,230,0.55); line-height: 1.8; }
+  .terapeuta-tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .t-tag { font-size: 10px; padding: 4px 10px; border-radius: 20px; background: rgba(196,113,74,0.15); color: var(--terracota-light); letter-spacing: 0.5px; }
+
+  /* DIFERENCIAIS */
+  .section-diferenciais { background: var(--terracota-pale); }
+  .diferenciais-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .dif-card { background: white; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; border-top: 3px solid var(--terracota); }
+  .dif-icon { font-size: 32px; }
+  .dif-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; }
+  .dif-card p { font-size: 13px; color: var(--marrom-meio); line-height: 1.7; }
+
+  /* DEPOIMENTOS */
+  .section-depoimentos { background: var(--bg); }
+  .depoimentos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .dep-card { background: white; border-radius: 16px; padding: 28px; position: relative; border: 1px solid rgba(44,31,20,0.06); transition: box-shadow 0.3s ease; }
+  .dep-card:hover { box-shadow: 0 12px 40px rgba(44,31,20,0.08); }
+  .dep-aspas { font-family: 'Cormorant Garamond', serif; font-size: 64px; color: var(--terracota); opacity: 0.2; line-height: 0.6; margin-bottom: 16px; }
+  .dep-texto { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--marrom); line-height: 1.7; margin-bottom: 20px; }
+  .dep-autor { display: flex; align-items: center; gap: 12px; }
+  .dep-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--terracota-pale); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--terracota); font-style: italic; flex-shrink: 0; }
+  .dep-nome { font-size: 13px; font-weight: 500; color: var(--marrom); }
+  .dep-info { font-size: 11px; color: var(--marrom-claro); margin-top: 2px; }
+  .dep-estrelas { color: #E8A030; font-size: 12px; margin-top: 4px; }
+
+  /* COMO FUNCIONA */
+  .section-como { background: var(--creme); }
+  .como-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; position: relative; }
+  .como-step { padding: 28px 24px 28px 0; position: relative; }
+  .como-step:not(:last-child)::after { content: '→'; position: absolute; right: -8px; top: 38px; color: var(--terracota); font-size: 18px; opacity: 0.4; }
+  .como-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--terracota); opacity: 0.3; line-height: 1; margin-bottom: 8px; }
+  .como-step h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; margin-bottom: 8px; }
+  .como-step p { font-size: 12px; color: var(--marrom-meio); line-height: 1.7; }
+
+  /* CTA FINAL */
+  .section-cta { background: var(--terracota); padding: 72px 48px; text-align: center; position: relative; overflow: hidden; }
+  .section-cta::before { content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+  .section-cta .section-label { color: rgba(255,255,255,0.6); }
+  .section-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 52px); font-weight: 300; color: white; line-height: 1.15; max-width: 600px; margin: 0 auto 16px; }
+  .section-cta h2 em { font-style: italic; }
+  .section-cta p { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 36px; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+  .btn-cta-white { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--terracota); padding: 18px 36px; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-decoration: none; transition: all 0.3s ease; }
+  .btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(44,31,20,0.2); }
+  .btn-cta-white svg { width: 18px; height: 18px; fill: var(--terracota); }
+  .cta-info { margin-top: 20px; font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 0.5px; }
+
+  /* FOOTER */
+  .footer-mini { background: var(--marrom); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-mini .brand { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; color: var(--creme); opacity: 0.6; }
+  .footer-mini .addr { font-size: 11px; color: rgba(245,239,230,0.3); letter-spacing: 0.5px; }
+
+  /* WA FLUTUANTE */
+  .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); text-decoration: none; transition: all 0.3s ease; animation: pulse 2.5s ease infinite; }
+  .wa-float:hover { transform: scale(1.1); }
+  .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.4); } 50% { box-shadow: 0 8px 40px rgba(37,211,102,0.65); } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 680px) {
+    .hero, .section, .section-cta { padding: 52px 24px; }
+    .footer-mini { padding: 20px 24px; }
+    .abordagem-layout { grid-template-columns: 1fr; gap: 32px; }
+    .como-step:not(:last-child)::after { display: none; }
+    .wa-float { bottom: 16px; right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="wa-float" href="https://wa.me/5511965790254?text=Olá!%20Tenho%20interesse%20em%20Terapia%20Ocupacional%20Infantil%20na%20Casa%20Oliveira." target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-tag">Terapia Ocupacional Infantil</div>
+  <h1 class="hero-headline">Seu filho merece<br>se <em>descobrir</em><br>no próprio ritmo.</h1>
+  <p class="hero-sub">Na Casa Oliveira, cada criança é acolhida como é — com suas singularidades, seu tempo e seu jeito único de estar no mundo.</p>
+  <div class="hero-cta-row">
+    <a class="btn-primary" href="https://wa.me/5511965790254?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20Terapia%20Ocupacional%20Infantil." target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar avaliação
+    </a>
+    <span style="font-size:12px;color:rgba(245,239,230,0.35);">Atendimento humanizado e especializado</span>
+  </div>
+  <div class="hero-pills">
+    <span class="pill">Desenvolvimento Infantil</span>
+    <span class="pill">Questões Sensoriais</span>
+    <span class="pill">TDAH</span>
+    <span class="pill">TEA</span>
+    <span class="pill">Dificuldades Motoras</span>
+    <span class="pill">Regulação Emocional</span>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="section section-dores">
+  <div class="reveal">
+    <div class="section-label">Você reconhece isso?</div>
+    <h2 class="section-title">Quando algo te diz que <em>seu filho precisa de apoio</em></h2>
+  </div>
+  <div class="dores-grid reveal">
+    <div class="dor-card"><div class="dor-icon">🧩</div><h3>Dificuldade de atenção</h3><p>Não consegue terminar tarefas, se distrai facilmente, parece "desligado" mesmo quando você fala diretamente com ele.</p></div>
+    <div class="dor-card"><div class="dor-icon">🤸</div><h3>Atraso no desenvolvimento motor</h3><p>Tropeça com frequência, tem dificuldade com o lápis, botões, cadarços — habilidades que crianças da mesma idade já dominam.</p></div>
+    <div class="dor-card"><div class="dor-icon">💛</div><h3>Explosões emocionais</h3><p>Reage intensamente a barulhos, texturas ou mudanças de rotina. Birras que parecem desproporcionais para a situação.</p></div>
+    <div class="dor-card"><div class="dor-icon">🌍</div><h3>Dificuldade de socialização</h3><p>Prefere ficar sozinho, tem dificuldade em entender regras de convivência ou em fazer e manter amizades.</p></div>
+    <div class="dor-card"><div class="dor-icon">📚</div><h3>Desafios na escola</h3><p>Professores relatam dificuldades de comportamento ou aprendizado que não se explicam pela inteligência da criança.</p></div>
+    <div class="dor-card"><div class="dor-icon">🌙</div><h3>Rotinas difíceis</h3><p>Resistência ou dificuldade com alimentação, higiene, sono e outras rotinas que deveriam ser naturais para a idade.</p></div>
+  </div>
+</section>
+
+<!-- ABORDAGEM -->
+<section class="section section-abordagem">
+  <div class="reveal">
+    <div class="section-label">Nossa abordagem</div>
+    <h2 class="section-title">Não é <em>apenas terapia.</em><br>É um lugar de pertencimento.</h2>
+  </div>
+  <div class="abordagem-layout reveal">
+    <div class="abordagem-texto">
+      <p>Na Casa Oliveira, acreditamos que cada criança carrega um potencial único que precisa ser <strong>visto, nomeado e cuidado com afeto.</strong></p>
+      <p>Não tratamos diagnósticos — cuidamos de crianças. Nossa equipe combina <strong>rigor técnico com escuta genuína,</strong> construindo com cada família um plano terapêutico que respeita o ritmo e a singularidade de cada pequeno.</p>
+      <p>Aqui não é clínica fria. <strong>É Casa.</strong></p>
+    </div>
+    <div class="abordagem-lista">
+      <div class="ab-item"><div class="ab-dot"></div><p><strong>Avaliação completa e individualizada</strong>Entendemos a criança em toda sua complexidade — sensorial, emocional, motora e cognitiva.</p></div>
+      <div class="ab-item"><div class="ab-dot" style="background:var(--verde)"></div><p><strong>Plano terapêutico construído com a família</strong>Os pais fazem parte do processo. Orientamos e acolhemos em cada etapa.</p></div>
+      <div class="ab-item"><div class="ab-dot"></div><p><strong>Integração sensorial e regulação emocional</strong>Técnicas baseadas em evidências para um desenvolvimento saudável e duradouro.</p></div>
+      <div class="ab-item"><div class="ab-dot" style="background:var(--verde)"></div><p><strong>Práticas integrativas complementares</strong>Acupuntura e terapia floral quando indicadas, com olhar holístico e integrador.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="section section-diferenciais">
+  <div class="reveal">
+    <div class="section-label">Por que a Casa Oliveira</div>
+    <h2 class="section-title">Uma clínica que funciona como <em>sistema vivo</em></h2>
+  </div>
+  <div class="diferenciais-grid reveal">
+    <div class="dif-card">
+      <div class="dif-icon">🧬</div>
+      <h4>Sistema exclusivo de gestão clínica</h4>
+      <p>Desenvolvemos um sistema inovador e exclusivo de gestão clínica interna que permite a elaboração dos projetos terapêuticos individuais e o monitoramento de cada etapa de execução — garantindo continuidade e precisão no cuidado.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">📋</div>
+      <h4>Projeto Terapêutico Individual</h4>
+      <p>Cada criança tem um PTS — Projeto Terapêutico Singular — construído com a família, revisado periodicamente e atualizado conforme a evolução do tratamento.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">🎓</div>
+      <h4>Equipe em formação contínua</h4>
+      <p>Nossas terapeutas estão em constante atualização técnica. Realizamos supervisões clínicas semanais para discussão de casos, garantindo o mais alto nível de cuidado para cada criança.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">🌿</div>
+      <h4>Modelo transgeneracional e integrativo</h4>
+      <p>Atendemos toda a família — crianças, adultos e idosos — com olhar integrativo que conecta saúde física, emocional e funcional em um único espaço de cuidado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="section section-equipe">
+  <div class="reveal">
+    <div class="section-label">Quem cuida do seu filho</div>
+    <h2 class="section-title">Uma equipe que <em>escolheu</em> estar aqui</h2>
+  </div>
+  <div class="equipe-grid reveal">
+    <div class="terapeuta-card">
+      <img class="terapeuta-foto" src="https://static.wixstatic.com/media/b3c620_7272f9a64b7043b8aca15921a02fd2ad~mv2.png" alt="Gabriela Oliveira">
+      <div class="terapeuta-body">
+        <span class="terapeuta-fundadora">✦ Fundadora &amp; Gestora</span>
+        <h3>Gabriela Oliveira</h3>
+        <div class="cargo">Terapeuta Ocupacional · Acupunturista · Terapeuta Floral</div>
+        <p>Fundadora e gestora da Casa Oliveira Saúde, Gabriela une formação clínica sólida com práticas integrativas. Especialista em saúde mental e desenvolvimento infantil, acupunturista e terapeuta floral — cuida da criança e da família com presença, técnica e afeto.</p>
+        <div class="terapeuta-tags">
+          <span class="t-tag">Saúde Mental</span>
+          <span class="t-tag">Desenvolvimento Infantil</span>
+          <span class="t-tag">Acupuntura</span>
+          <span class="t-tag">Terapia Floral</span>
+        </div>
+      </div>
+    </div>
+    <div class="terapeuta-card">
+      <img class="terapeuta-foto" src="https://static.wixstatic.com/media/b3c620_42ddaf770dbe4384b859beaf382e4e2d~mv2.png" alt="Larissa Pereira">
+      <div class="terapeuta-body">
+        <h3>Larissa Pereira</h3>
+        <div class="cargo">Terapeuta Ocupacional · Especialista em Saúde Mental</div>
+        <p>Especialista em saúde mental infantil, atua com desenvolvimento, questões sensoriais, emocionais e motoras. Combina escuta clínica apurada com abordagem sensível e técnica, acolhendo cada criança em sua singularidade.</p>
+        <div class="terapeuta-tags">
+          <span class="t-tag">Saúde Mental Infantil</span>
+          <span class="t-tag">Integração Sensorial</span>
+          <span class="t-tag">Regulação Emocional</span>
+        </div>
+      </div>
+    </div>
+    <div class="terapeuta-card">
+      <img class="terapeuta-foto" src="https://static.wixstatic.com/media/b3c620_b0dab6f7d2a546e790fac57e2d96dc79~mv2.png" alt="Larissa Neves">
+      <div class="terapeuta-body">
+        <h3>Larissa Neves</h3>
+        <div class="cargo">Terapeuta Ocupacional</div>
+        <p>Dedicada ao desenvolvimento infantil com foco em questões sensoriais, emocionais e motoras. Constrói com cada criança um vínculo de confiança que potencializa cada conquista terapêutica, passo a passo.</p>
+        <div class="terapeuta-tags">
+          <span class="t-tag">Desenvolvimento Infantil</span>
+          <span class="t-tag">Questões Sensoriais</span>
+          <span class="t-tag">Motricidade</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section section-depoimentos">
+  <div class="reveal">
+    <div class="section-label">O que as famílias dizem</div>
+    <h2 class="section-title">Histórias que <em>nos movem</em> todos os dias</h2>
+  </div>
+  <div class="depoimentos-grid reveal">
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">Meu filho chegou sem conseguir ficar sentado por mais de 5 minutos. Depois de 4 meses com a Larissa, ele termina as tarefas da escola sozinho. A evolução foi além de tudo que eu esperava.</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">A</div>
+        <div>
+          <div class="dep-nome">Ana P.</div>
+          <div class="dep-info">Mãe do Miguel, 7 anos · TDAH</div>
+          <div class="dep-estrelas">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">O que me conquistou foi a forma como a Gabriela acolheu minha família inteira. Ela não tratou só minha filha — ela nos ajudou a entender como apoiá-la em casa. Isso mudou tudo.</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">C</div>
+        <div>
+          <div class="dep-nome">Camila R.</div>
+          <div class="dep-info">Mãe da Sofia, 5 anos · Atraso de desenvolvimento</div>
+          <div class="dep-estrelas">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">Meu filho tinha crises intensas na escola e em casa. A Larissa Pereira foi incrível — paciente, técnica e muito humana. Hoje ele tem ferramentas para se regular. Uma conquista enorme.</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">F</div>
+        <div>
+          <div class="dep-nome">Fernanda M.</div>
+          <div class="dep-info">Mãe do Theo, 9 anos · TEA leve</div>
+          <div class="dep-estrelas">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">A estrutura da clínica é diferente de tudo que já vi. Elas têm um sistema de acompanhamento muito sério — recebo relatório de cada sessão e vejo a evolução documentada. Me dá muita segurança.</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">R</div>
+        <div>
+          <div class="dep-nome">Renata S.</div>
+          <div class="dep-info">Mãe do Pedro, 6 anos · Dificuldades sensoriais</div>
+          <div class="dep-estrelas">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">Passei anos buscando um lugar que realmente entendesse minha filha. Na Casa Oliveira senti que ela foi vista pela primeira vez — não como um diagnóstico, mas como uma criança com possibilidades.</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">J</div>
+        <div>
+          <div class="dep-nome">Juliana C.</div>
+          <div class="dep-info">Mãe da Clara, 8 anos · Integração sensorial</div>
+          <div class="dep-estrelas">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">O que mais me surpreendeu foi a supervisão semanal da equipe. Saber que as terapeutas discutem o caso do meu filho toda semana em equipe me deu uma confiança que eu nunca tive em outros lugares.</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">M</div>
+        <div>
+          <div class="dep-nome">Marcela T.</div>
+          <div class="dep-info">Mãe do Lucas, 10 anos · TDAH e dificuldade motora</div>
+          <div class="dep-estrelas">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="section section-como">
+  <div class="reveal">
+    <div class="section-label">Como funciona</div>
+    <h2 class="section-title">Do primeiro contato ao <em>primeiro sorriso</em> diferente</h2>
+  </div>
+  <div class="como-steps reveal">
+    <div class="como-step"><div class="como-num">01</div><h4>Você entra em contato</h4><p>Pelo WhatsApp, sem burocracia. Nossa equipe responde rapidinho e entende o que você precisa.</p></div>
+    <div class="como-step"><div class="como-num">02</div><h4>Avaliação inicial</h4><p>Sessão de avaliação com a terapeuta. Conversamos com você e observamos seu filho com cuidado.</p></div>
+    <div class="como-step"><div class="como-num">03</div><h4>Projeto Terapêutico</h4><p>Construímos juntos um PTS personalizado, com metas claras e comunicação constante com a família.</p></div>
+    <div class="como-step"><div class="como-num">04</div><h4>Acompanhamento contínuo</h4><p>Sessões semanais com relatórios periódicos. Você acompanha cada evolução do seu filho.</p></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section-cta">
+  <div class="reveal">
+    <div class="section-label">Próximo passo</div>
+    <h2>O cuidado que seu filho merece <em>começa com uma conversa</em></h2>
+    <p>Agende agora a avaliação. Sem filas, sem burocracia — só acolhimento.</p>
+    <a class="btn-cta-white" href="https://wa.me/5511965790254?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20Terapia%20Ocupacional%20Infantil%20para%20meu%20filho." target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar pelo WhatsApp agora
+    </a>
+    <div class="cta-info">Rua Dr. Samuel Porto, 396 · Saúde · São Paulo · Próximo ao Metrô Saúde</div>
+  </div>
+</section>
+
+<footer class="footer-mini">
+  <div class="brand">Casa Oliveira Saúde</div>
+  <div class="addr">Rua Dr. Samuel Porto, 396 · Saúde · São Paulo · (11) 9 6579-0254</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
