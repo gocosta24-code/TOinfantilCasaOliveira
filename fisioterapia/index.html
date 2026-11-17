@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fisioterapia Ortopédica no Bairro Saúde, São Paulo | Casa Oliveira Saúde</title>
+<meta name="description" content="Fisioterapia ortopédica a 5 minutos do Metrô Saúde. Pós-operatório de joelho, quadril e ombro, dor na coluna, hérnia de disco, ciático, entorses e fraturas. Atendimento individual, com especialistas em ortopedia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- TAG GLOBAL DO GOOGLE ADS (gtag.js) entra aqui -->
+<style>
+  :root{
+    --ink:#3A2A1F;--ink-soft:#7A6656;--cream:#F5EEE3;--panel:#EDE3D4;--clay:#E4D6C3;
+    --brown:#6B4A35;--brown-dark:#523726;--terra:#A9573D;--moss:#545E3A;--line:#DDCFBC;
+    --r:18px;--pad:22px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:92px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 var(--pad)}
+  h1,h2,h3{margin:0;line-height:1.15;font-family:'Lora',Georgia,serif;font-weight:600;letter-spacing:-.01em}
+  h1{font-size:clamp(31px,7.4vw,50px)}
+  h2{font-size:clamp(25px,5.6vw,36px)}
+  h3{font-size:22px}
+  p{margin:0 0 14px}
+  a{color:inherit}
+  .eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+  section{padding:52px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:0}
+  .lead{color:var(--ink-soft);font-size:17.5px}
+
+  header{background:var(--panel);padding:16px 0}
+  .brandrow{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .brand svg{flex:none}
+  .brand b{font-size:17px;font-weight:600;letter-spacing:-.01em;display:block;line-height:1.2}
+  .brand span{font-size:11.5px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;display:block}
+  .headtel{font-size:14px;font-weight:600;color:var(--brown);text-decoration:none;white-space:nowrap}
+
+  .hero{padding:44px 0 46px}
+  .hero h1 em{font-style:italic;color:var(--terra)}
+  .hero .lead{margin-top:18px;max-width:34em}
+  .pill{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:8px 14px;border-radius:999px;
+    background:#fff;border:1px solid var(--line);font-size:14px;font-weight:600;color:var(--moss)}
+  .pill::before{content:"";width:8px;height:8px;border-radius:50%;background:#5E8A3A;box-shadow:0 0 0 4px rgba(94,138,58,.18)}
+
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;
+    border-radius:999px;text-decoration:none;font-weight:600;font-size:16.5px;flex:1 1 auto;transition:transform .12s ease,background .2s ease}
+  .btn-main{background:var(--brown);color:#fff}
+  .btn-main:hover{background:var(--brown-dark)}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--terra)}
+  .btn:active{transform:translateY(1px)}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+
+  .trust{margin-top:26px;display:grid;gap:10px;font-size:14.5px;line-height:1.45}
+  .trust div{background:var(--panel);border-radius:14px;padding:12px 16px}
+  .trust b{display:block;font-size:15px}
+  .trust span{color:var(--ink-soft)}
+
+  .urg{background:var(--ink);color:#F7ECE1;border-radius:26px;padding:34px 22px 30px}
+  .urg .eyebrow{color:#D9A27F}
+  .urg h2{color:#fff}
+  .urg p{color:#CDBBA8}
+  .urg .big{font-family:'Lora',Georgia,serif;font-style:italic;font-size:clamp(20px,5vw,25px);color:#F2E3D2;margin:20px 0 0;line-height:1.35}
+
+  .cards{display:grid;gap:14px;margin-top:26px}
+  .card{background:var(--panel);border-radius:var(--r);padding:24px 22px;scroll-margin-top:20px;border:2px solid transparent}
+  .card.hit{border-color:var(--terra);background:#F1E6D7}
+  .card .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}
+  .card h3{margin-bottom:10px}
+  .card p{color:#54473C;font-size:16px}
+  .card ul{margin:0 0 16px;padding-left:20px;color:#54473C;font-size:15.5px}
+  .card li{margin-bottom:4px}
+  .card .cta{display:inline-flex;align-items:center;min-height:48px;font-weight:600;color:var(--brown);text-decoration:none;border-bottom:2px solid var(--line)}
+
+  .care{margin:26px 0 0;position:relative;border-radius:26px;overflow:hidden}
+  .care img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 45%;display:block}
+  .care figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 22px 22px;
+    background:linear-gradient(to top,rgba(58,42,31,.88),rgba(58,42,31,0));color:#fff;
+    font-family:'Lora',Georgia,serif;font-style:italic;font-size:clamp(19px,4.6vw,24px);line-height:1.3}
+  @media(min-width:620px){.care img{aspect-ratio:16/11}}
+
+  .team{display:grid;gap:14px;margin-top:24px}
+  .pro{background:var(--clay);border-radius:var(--r);padding:24px 22px}
+  .pro h3{font-size:24px}
+  .pro .role{font-weight:600;margin:6px 0 10px;color:var(--brown)}
+  .pro p{font-size:16px;color:#54473C;margin:0}
+
+  .check{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:13px}
+  .check li{position:relative;padding-left:36px;font-size:16.5px}
+  .check li::before{content:"";position:absolute;left:0;top:3px;width:22px;height:22px;border-radius:50%;border:2px solid var(--terra)}
+  .check li::after{content:"";position:absolute;left:6.5px;top:10px;width:5px;height:9px;border:solid var(--terra);border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+  .steps{counter-reset:s;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:16px}
+  .steps li{counter-increment:s;position:relative;padding:20px 22px 20px 66px;background:var(--panel);border-radius:var(--r)}
+  .steps li::before{content:counter(s);position:absolute;left:20px;top:20px;width:34px;height:34px;border-radius:50%;
+    background:var(--terra);color:#fff;font-weight:700;font-size:16px;display:grid;place-items:center}
+  .steps b{display:block;margin-bottom:4px}
+  .steps span{color:var(--ink-soft);font-size:15.5px}
+
+  .faq{margin-top:24px;display:grid;gap:12px}
+  .faq details{background:var(--panel);border-radius:var(--r);padding:0 22px}
+  .faq summary{list-style:none;cursor:pointer;font-weight:600;font-size:16.5px;padding:20px 34px 20px 0;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:24px;font-weight:400;color:var(--terra)}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{color:var(--ink-soft);font-size:15.5px;margin:0;padding:0 0 20px}
+
+  .place{background:var(--panel);border-radius:var(--r);padding:24px 22px;margin-top:24px}
+  .place p{margin:0 0 6px;font-size:16.5px}
+  .place .muted{color:var(--ink-soft);font-size:15px}
+  .maplink{display:inline-flex;align-items:center;gap:8px;margin-top:14px;min-height:48px;font-weight:600;color:var(--brown);text-decoration:none;border-bottom:2px solid var(--line)}
+
+  .close{background:var(--brown);color:#fff;border-radius:26px;padding:34px 24px;margin:14px 0 0}
+  .close h2{color:#fff;max-width:14em}
+  .close p{color:#EADBC9;margin-top:12px}
+  .close .btn-main{background:#fff;color:var(--brown-dark);margin-top:8px}
+  .close .btn-main:hover{background:#F5EEE3}
+  .close .btn-ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+
+  footer{padding:30px 0 40px;font-size:13.5px;color:var(--ink-soft)}
+  footer .sig{font-family:'Lora',Georgia,serif;font-style:italic;font-weight:600;color:var(--terra);margin-bottom:6px}
+
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(245,238,227,.94);backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom))}
+  .bar .inner{max-width:760px;margin:0 auto;display:flex;gap:10px}
+  .bar .btn{min-height:52px;font-size:16px}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.on{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  @media(min-width:620px){
+    .btn{flex:0 0 auto}
+    .trust{grid-template-columns:1fr 1fr}
+    .team{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brandrow">
+    <a class="brand" href="#topo">
+      <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M6 17.5 20 5l14 12.5V36H6z" fill="none" stroke="#A9573D" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M20 30V19M20 21c-3.4 0-5.6-1.9-5.6-4.6 3.4 0 5.6 1.9 5.6 4.6zm0 0c3.4 0 5.6-1.9 5.6-4.6-3.4 0-5.6 1.9-5.6 4.6z" fill="none" stroke="#A9573D" stroke-width="2.1" stroke-linecap="round"/>
+      </svg>
+      <b>casa oliveira<span>fisioterapia ortopédica</span></b>
+    </a>
+    <a class="headtel" href="tel:+5511965790254">(11) 96579-0254</a>
+  </div>
+</header>
+
+<main id="topo">
+<div class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow" id="h-eyebrow">Fisioterapia ortopédica · Bairro Saúde, São Paulo</p>
+    <h1 id="h-title">A dor não espera. <em>A sua reabilitação</em> também não precisa esperar.</h1>
+    <p class="lead" id="h-lead">Pós-operatório de joelho, quadril e ombro, dor na coluna, hérnia de disco, ciático, entorses e fraturas. Atendimento individual com fisioterapeutas especialistas em ortopedia, a cinco minutos do Metrô Saúde.</p>
+    <p class="pill">Agenda com horários para novos pacientes</p>
+
+    <div class="actions">
+      <a class="btn btn-main wpp" id="wpp-hero" href="#" target="_blank" rel="noopener">Agendar avaliação pelo WhatsApp</a>
+      <a class="btn btn-ghost" href="tel:+5511965790254">Ligar agora</a>
+    </div>
+
+    <div class="trust">
+      <div><b>Especialistas em ortopedia</b><span>Equipe com especialização em Trauma e Ortopedia e em Fisioterapia Esportiva.</span></div>
+      <div><b>Atendimento individual</b><span>Uma fisioterapeuta, um paciente, um plano com começo, meio e fim.</span></div>
+      <div><b>Reembolso do plano</b><span>Nota fiscal e relatório para você pedir reembolso ao seu convênio.</span></div>
+      <div><b>Até 10x sem juros</b><span>Programa de reabilitação individualizado parcelado.</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="urg">
+      <p class="eyebrow">Por que começar agora</p>
+      <h2>Os primeiros dias depois da cirurgia ou da lesão contam muito.</h2>
+      <p>Músculo parado enfraquece, articulação parada endurece, dor sem cuidado vira medo de se mexer. Começar no momento certo, com orientação, costuma encurtar o caminho de volta.</p>
+      <p class="big">Você não precisa esperar a dor piorar para pedir ajuda.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="eyebrow">O que atendemos</p>
+    <h2>Os casos que não podem esperar.</h2>
+    <div class="cards">
+
+      <article class="card" id="pos-operatorio">
+        <span class="tag">Pós-operatório</span>
+        <h3>Operou o joelho, o quadril, o ombro ou a coluna?</h3>
+        <p>A cirurgia corrige a estrutura. A fisioterapia devolve o movimento, a força e a confiança para andar, subir escada, dirigir e voltar à rotina.</p>
+        <ul>
+          <li>Reconstrução de ligamento (LCA) e menisco</li>
+          <li>Prótese de joelho e de quadril</li>
+          <li>Manguito rotador e outras cirurgias de ombro</li>
+          <li>Cirurgias de coluna e fraturas operadas</li>
+        </ul>
+        <a class="cta wpp" data-msg="Olá! Fiz uma cirurgia e quero agendar uma avaliação de fisioterapia pós-operatória." href="#" target="_blank" rel="noopener">Agendar avaliação pós-operatória →</a>
+      </article>
+
+      <article class="card" id="coluna">
+        <span class="tag">Coluna</span>
+        <h3>Travou as costas? Dor que desce pela perna?</h3>
+        <p>Dor lombar, hérnia de disco e ciático tiram o sono e a rotina. A fisioterapia trata a dor e o que está por trás dela, para você voltar a se mexer sem medo.</p>
+        <ul>
+          <li>Hérnia de disco e protrusão</li>
+          <li>Dor ciática</li>
+          <li>Lombalgia aguda ("travou")</li>
+          <li>Dor no pescoço e torcicolo</li>
+        </ul>
+        <a class="cta wpp" data-msg="Olá! Estou com dor na coluna e quero agendar uma avaliação de fisioterapia." href="#" target="_blank" rel="noopener">Agendar avaliação para coluna →</a>
+      </article>
+
+      <article class="card" id="lesoes">
+        <span class="tag">Lesões e fraturas</span>
+        <h3>Torceu, lesionou ou tirou o gesso agora?</h3>
+        <p>Entorse que não desincha, músculo que não volta, articulação dura depois da imobilização. Quanto antes a reabilitação começa, melhor.</p>
+        <ul>
+          <li>Entorse de tornozelo e de joelho</li>
+          <li>Reabilitação após fratura e retirada do gesso</li>
+          <li>Lesões musculares e do esporte</li>
+          <li>Tendinites e bursites</li>
+        </ul>
+        <a class="cta wpp" data-msg="Olá! Tive uma lesão e quero agendar uma avaliação de fisioterapia." href="#" target="_blank" rel="noopener">Agendar avaliação para lesão →</a>
+      </article>
+
+    </div>
+    <figure class="care">
+      <img src="jardim.jpg" alt="Jardim interno da Casa Oliveira, com a sala de reabilitação ao fundo" loading="lazy" width="1200" height="1600">
+      <figcaption>Um jardim no meio do caminho entre a dor e a alta. Não é clínica, é Casa.</figcaption>
+    </figure>
+  </section>
+
+  <section class="reveal">
+    <p class="eyebrow">Quem cuida de você</p>
+    <h2>Fisioterapeutas especialistas em ortopedia.</h2>
+    <div class="team">
+      <div class="pro">
+        <h3>Dra. Carolina Travaline</h3>
+        <p class="role">Fisioterapeuta · ortopedia e esporte</p>
+        <p>26 anos de experiência clínica, especialista em ortopedia e em fisioterapia esportiva. Conduz os casos de pós-operatório e lesões.</p>
+      </div>
+      <div class="pro">
+        <h3>Dra. Larissa Gomes da Silva</h3>
+        <p class="role">Fisioterapeuta · trauma e ortopedia</p>
+        <p>Especialista em Trauma e Ortopedia pela São Camilo. Atende reabilitação de fraturas, coluna e retorno às atividades.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="eyebrow">Como funciona</p>
+    <h2>Da primeira mensagem ao primeiro passo sem dor.</h2>
+    <ol class="steps">
+      <li><b>Você fala com a nossa equipe</b><span>Pelo WhatsApp ou por telefone. Agendamos a avaliação no horário que couber na sua semana.</span></li>
+      <li><b>Avaliação completa</b><span>A fisioterapeuta entende a sua história, examina, mede movimento e força, e define as metas com você.</span></li>
+      <li><b>Programa de reabilitação individualizado</b><span>Sessões individuais com começo, meio e fim, alinhadas ao seu médico quando houver.</span></li>
+      <li><b>Alta e manutenção</b><span>Reavaliações ao longo do caminho e, depois da alta, Pilates clínico para não voltar a doer.</span></li>
+    </ol>
+  </section>
+
+  <section class="reveal" id="duvidas">
+    <p class="eyebrow">Dúvidas frequentes</p>
+    <h2>Antes de agendar.</h2>
+    <div class="faq">
+      <details>
+        <summary>Preciso de pedido médico?</summary>
+        <p>Não. Você pode agendar a avaliação sem encaminhamento. Se tiver pedido, exames ou relatório da cirurgia, traga: eles ajudam a montar o seu programa.</p>
+      </details>
+      <details>
+        <summary>Quando posso começar depois da cirurgia?</summary>
+        <p>Depende da cirurgia e da orientação do seu médico. Em muitos casos a reabilitação começa logo nos primeiros dias. Fale com a nossa equipe e a gente organiza o início junto com a orientação dele.</p>
+      </details>
+      <details>
+        <summary>Vocês atendem convênio?</summary>
+        <p>O atendimento é particular. Emitimos nota fiscal e relatório para você pedir reembolso ao seu plano de saúde.</p>
+      </details>
+      <details>
+        <summary>Quantas sessões vou precisar?</summary>
+        <p>Isso fica claro na avaliação. Cada caso tem um programa individualizado, com começo, meio e fim, pensado para você ter alta o quanto antes.</p>
+      </details>
+      <details>
+        <summary>Como funciona o pagamento?</summary>
+        <p>O programa de reabilitação individualizado pode ser parcelado em até 10x sem juros. Também atendemos sessões avulsas.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="eyebrow">Onde ficamos</p>
+    <h2>A cinco minutos do Metrô Saúde.</h2>
+    <div class="place">
+      <p><strong>Rua Dr. Samuel Porto, 396</strong></p>
+      <p>Bairro Saúde, São Paulo — SP</p>
+      <p class="muted">Atendimento particular, com nota fiscal e relatório para reembolso. Uma casa com jardim, acolhedora, preparada para receber você.</p>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Rua+Dr.+Samuel+Porto,+396,+Sa%C3%BAde,+S%C3%A3o+Paulo" target="_blank" rel="noopener">Ver no mapa</a>
+    </div>
+  </section>
+
+  <section class="reveal" style="border-top:0;padding-top:8px">
+    <div class="close">
+      <h2>Quanto antes começa, mais cedo você volta.</h2>
+      <p>Fale com a nossa equipe e agende a sua avaliação de fisioterapia.</p>
+      <div class="actions">
+        <a class="btn btn-main wpp" id="wpp-final" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+5511965790254">(11) 96579-0254</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="sig">casa oliveira saúde · não é clínica, é Casa.</p>
+    <p>Rua Dr. Samuel Porto, 396 — Saúde, São Paulo · (11) 96579-0254<br>
+    Fisioterapia ortopédica · atendimento particular e individual.</p>
+  </footer>
+
+</div>
+</main>
+
+<nav class="bar" aria-label="Contato">
+  <div class="inner">
+    <a class="btn btn-main wpp" id="wpp-bar" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-ghost" href="tel:+5511965790254">Ligar</a>
+  </div>
+</nav>
+
+<script>
+  // ---- Mensagem certa para cada anúncio: ?n=pos | coluna | lesao ----
+  const NICHOS = {
+    pos: {
+      eyebrow: 'Fisioterapia pós-operatória · Bairro Saúde, São Paulo',
+      title: 'Operou? <em>A reabilitação</em> começa agora.',
+      lead: 'Fisioterapia pós-operatória de joelho, quadril, ombro e coluna, com especialistas em ortopedia. Atendimento individual, a cinco minutos do Metrô Saúde.',
+      msg: 'Olá! Fiz uma cirurgia e quero agendar uma avaliação de fisioterapia pós-operatória.',
+      card: 'pos-operatorio'
+    },
+    coluna: {
+      eyebrow: 'Fisioterapia para coluna · Bairro Saúde, São Paulo',
+      title: 'Travou as costas? <em>Dá para voltar</em> a se mexer sem medo.',
+      lead: 'Fisioterapia para hérnia de disco, dor ciática e lombalgia, com especialistas em ortopedia. Atendimento individual, a cinco minutos do Metrô Saúde.',
+      msg: 'Olá! Estou com dor na coluna e quero agendar uma avaliação de fisioterapia.',
+      card: 'coluna'
+    },
+    lesao: {
+      eyebrow: 'Fisioterapia para lesões e fraturas · Bairro Saúde',
+      title: 'Torceu, lesionou ou tirou o gesso? <em>Comece agora.</em>',
+      lead: 'Reabilitação de entorses, fraturas, lesões musculares e do esporte, com especialistas em ortopedia. Atendimento individual, a cinco minutos do Metrô Saúde.',
+      msg: 'Olá! Tive uma lesão e quero agendar uma avaliação de fisioterapia.',
+      card: 'lesoes'
+    }
+  };
+  const BASE = 'https://wa.me/5511965790254?text=';
+  let msgPadrao = 'Olá! Quero agendar uma avaliação de fisioterapia.';
+  const n = NICHOS[new URLSearchParams(location.search).get('n')];
+  if (n) {
+    document.getElementById('h-eyebrow').textContent = n.eyebrow;
+    document.getElementById('h-title').innerHTML = n.title;
+    document.getElementById('h-lead').textContent = n.lead;
+    msgPadrao = n.msg;
+    const c = document.getElementById(n.card);
+    if (c) { c.classList.add('hit'); c.parentNode.prepend(c); }
+  }
+  document.querySelectorAll('a.wpp').forEach(a => {
+    a.href = BASE + encodeURIComponent(a.dataset.msg || msgPadrao);
+  });
+
+  // Revelação suave das seções
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ---- Conversão do Google Ads: clique no WhatsApp ----
+  // Quando a tag da conta for instalada, trocar o send_to pelo rótulo de conversão.
+  function registrarLead() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', { send_to: 'AW-XXXXXXXX/YYYYYYYY' });
+    }
+  }
+  document.querySelectorAll('a.wpp').forEach(a => a.addEventListener('click', registrarLead));
+</script>
+</body>
+</html>
